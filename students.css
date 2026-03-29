@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: #f0f0f0;
+}
+.container {
+    padding: 20px;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eaeaea;
+    padding: 15px;
+    border-bottom: 2px solid #999;
+}
+.top-bar h2 {
+    color: #d09047;
+}
+.navbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background: #ddd;
+}
+.navbar a {
+    padding: 8px 15px;
+    background: #eee;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+.navbar a {
+    background: #d09047;
+    color: white;
+}
+.add-btn {
+    background: #4db6d6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.search-box {
+    margin-top: 15px;
+    background: #ddd;
+    padding: 15px;
+}
+.search-box input {
+    padding: 8px;
+    width: 300px;
+    margin: 0 10px;
+}
+.search-btn {
+    padding: 8px 15px;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.refresh-btn {
+    padding: 8px 15px;
+    background: #4db6d6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.table-container {
+    margin-top: 15px;
+    background: white;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background: #d09047;
+    color: white;
+}
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+tr:hover {
+    background: #f5f5f5;
+}

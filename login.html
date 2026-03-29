@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibOS</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="login-form">
+
+    <h1 class="title">LibOS</h1>
+
+    <div class="container">
+        <div class="main">
+
+            <div class="content">
+                <h2>Log In</h2>
+
+                <form id="loginForm">
+
+                    <!-- ✅ ADD id -->
+                    <input type="text" id="username" placeholder="User Name" required><br><br>
+
+                    <input type="password" id="password" placeholder="User Password" required><br><br>
+
+                    <button type="submit">Login</button>
+
+                </form>
+
+                <p class="demo-text">Demo Login: admin / 1234</p>
+            </div>
+
+            <div class="form-img">
+                <img src="background.png" alt="Library image">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<a href="main.html" class="back-btn">← Back</a>
+
+<!-- ✅ FIXED SCRIPT -->
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    if (username === "admin" && password === "1234") {
+        window.location.href = "dashboard.html";
+    } else {
+        alert("Invalid Login");
+    }
+});
+</script>
+
+</body>
+</html>

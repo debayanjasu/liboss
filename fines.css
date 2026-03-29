@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f6fb;
+}
+.navbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background: #ddd;
+}
+.navbar a {
+    padding: 8px 15px;
+    background: #eee;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+.navbar a {
+    background: #d09047;
+    color: white;
+}
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+.fines-section {
+    flex: 3;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.payment-section {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+h2 {
+    color: #4a6cf7;
+}
+.search-bar {
+    margin-bottom: 15px;
+}
+.search-bar input {
+    padding: 8px;
+    width: 200px;
+}
+.btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.search { background: #4a6cf7; color: white; }
+.refresh { background: #4cc9f0; color: white; }
+.process { background: #4cc9f0; color: white; width: 100%; margin-top: 15px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background: #d09047;
+    color: white;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+tr:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+}
+.payment-method label {
+    display: block;
+    margin: 5px 0;
+}
+textarea {
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+}

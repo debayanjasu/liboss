@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fines & Payment</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="fines.css">
+</head>
+<body>
+<div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="book.html">Books</a>
+        <a href="issue_return.html">Issued Books</a>
+        <a href="transaction.html">Transactions</a>
+        <a href="fines.html">Fine & Payments</a>
+        <a href="reports.html">Reports</a>
+        <a href="notifications.html">Notifications</a>
+    </div>
+<div class="main-container">
+    <div class="fines-section">
+
+        <h2>⏱ Pending Fines</h2>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search Student...">
+            <button class="btn search">Search</button>
+            <button class="btn refresh">Refresh</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fine ID</th>
+                    <th>Name</th>
+                    <th>Student Code</th>
+                    <th>Book</th>
+                    <th>Amount</th>
+                    <th>Days</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for fine in fines %}
+                <tr onclick="selectFine('{{ fine.amount }}')">
+                    <td>{{ fine.id }}</td>
+                    <td>{{ fine.name }}</td>
+                    <td>{{ fine.code }}</td>
+                    <td>{{ fine.book }}</td>
+                    <td>₹{{ fine.amount }}</td>
+                    <td>{{ fine.days }}</td>
+                    <td>{{ fine.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="payment-section">
+
+        <h2>💳 Process Payment</h2>
+
+        <p><b>Selected Fine:</b> <span id="selectedFine">None</span></p>
+
+        <h3>Amount: ₹<span id="amount">0</span></h3>
+
+        <div class="payment-method">
+            <p>Payment Method:</p>
+
+            <label><input type="radio" name="method" value="cash"> Cash</label>
+            <label><input type="radio" name="method" value="gpay"> Google Pay</label>
+            <label><input type="radio" name="method" value="phonepe"> PhonePe</label>
+            <label><input type="radio" name="method" value="paytm"> Paytm</label>
+        </div>
+
+        <textarea placeholder="Reference / Remarks"></textarea>
+
+        <button class="btn process">✔ Process Payment</button>
+
+        <button class="btn history" onclick="downloadPDF()">📄 Download History</button>
+
+    </div>
+
+</div>
+<script>
+function selectFine(amount) {
+    document.getElementById("selectedFine").innerText = "Selected";
+    document.getElementById("amount").innerText = amount;
+}
+function downloadPDF() {
+    alert("PDF Download will be handled by Flask backend");
+}
+</script>
+
+</body>
+</html>

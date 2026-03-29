@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Dashboard</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="dashboardstyle.css">
+</head>
+<body>
+    <div class="top-header">
+      <div class="logo">
+          Librarian Dashboard
+       </div>
+      <div class="user-section">
+            👤 Admin (Demo)
+
+              
+             <button class="logout-btn" onclick="logout()">Logout</button>
+           </form>
+        </div>
+    </div>
+    <div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="book.html">Books</a>
+        <a href="issue_return.html">Issued Books</a>
+        <a href="transaction.html">Transactions</a>
+        <a href="fines.html">Fine & Payments</a>
+        <a href="reports.html">Reports</a>
+        <a href="notifications.html">Notifications</a>
+    </div>
+    <div class="container">
+        <h2>Welcome, <span id="username">Admin</span>!</h2>
+    </div>
+    <div class="cards">
+        <div class="card blue">
+            <h3>Issued Today</h3>
+            <p class="issued">{{ issued_today }}</p>
+        </div>
+        <div class="card cyan">
+            <h3>Returned Today</h3>
+            <p class="issued">{{ returned_today }}</p>
+        </div>
+        <div class="card pink">
+            <h3>Overdue Books</h3>
+            <p class="issued">{{ overdue_books }}</p>
+        </div>
+        <div class="card red">
+            <h3>Due Tomorrow</h3>
+            <p class="issued">{{ due_tomorrow }}</p>
+        </div>
+        <div class="card lightblue">
+            <h3>Active Students</h3>
+            <p class="issued">{{ active_students }}</p>
+        </div>
+        <div class="card purple">
+            <h3>Total Books</h3>
+            <p class="issued">{{ total_books }}</p>
+        </div>
+        <div class="card teal">
+            <h3>Available Books</h3>
+            <p class="issued">{{ available_books }}</p>
+        </div>
+        <div class="card violet">
+            <h3>Collections</h3>
+            <p class="issued">{{ collections }}</p>
+        </div>
+    </div>
+    <script>
+function logout() {
+    window.location.href = "login.html";
+}
+</script>
+</body>
+</html>

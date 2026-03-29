@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reports</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="reports.css">
+</head>
+
+<body>
+<div class="navbar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="student.html">Students</a>
+    <a href="book.html">Books</a>
+    <a href="issue_return.html">Issued Books</a>
+    <a href="transaction.html">Transactions</a>
+    <a href="fines.html">Fine & Payments</a>
+    <a href="reports.html">Reports</a>
+    <a href="notifications.html">Notifications</a>
+</div>
+<div class="container">
+    <h2>📊 Generate Reports</h2>
+    <div class="buttons">
+
+        <button onclick="loadReport('issued')">📚 Issued Books</button>
+        <button onclick="loadReport('popular')">📖 Popular Books</button>
+        <button onclick="loadReport('students')">👥 Student Activity</button>
+        <button onclick="loadReport('finance')">💰 Financial</button>
+        <button onclick="loadReport('daily')">📅 Daily Transactions</button>
+        <button onclick="loadReport('overdue')">⚠ Overdue</button>
+
+    </div>
+    <div class="filter">
+        From: <input type="date" id="from">
+        To: <input type="date" id="to">
+    </div>
+    <h3>📄 Report Output</h3>
+    <div id="report-box"></div>
+
+</div>
+
+<script>
+function loadReport(type) {
+
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+
+    fetch(`/get_report?type=${type}&from=${from}&to=${to}`)
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("report-box").innerHTML = data;
+    });
+}
+</script>
+
+</body>
+</html>

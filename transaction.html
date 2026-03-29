@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transactions</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="transactions.css">
+</head>
+<body>
+ <div class="navbar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="student.html">Students</a>
+    <a href="book.html">Books</a>
+    <a href="issue_return.html">Issued Books</a>
+    <a href="transaction.html">Transactions</a>
+    <a href="fines.html">Fine & Payments</a>
+    <a href="reports.html">Reports</a>
+    <a href="notifications.html">Notifications</a>
+</div>
+
+<div class="container">
+    <div class="top-bar">
+        <label>👤 Student Code:</label>
+        <form method="get" action="/transactions">
+            <input type="text" name="student_code" placeholder="Enter Code">
+            <button type="submit">📄 View Transactions</button>
+        </form>
+    </div>
+    <h2>📘 Transaction History</h2>
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Trans ID</th>
+                    <th>Book Title</th>
+                    <th>Author</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                    <th>Fine</th>
+                    <th>Fine Status</th>
+                    <th>Copy No</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for t in transactions %}
+                <tr>
+                    <td>{{ t.id }}</td>
+                    <td>{{ t.book_title }}</td>
+                    <td>{{ t.author }}</td>
+                    <td>{{ t.issue_date }}</td>
+                    <td>{{ t.due_date }}</td>
+                    <td>{{ t.return_date }}</td>
+                    <td>{{ t.status }}</td>
+                    <td>₹{{ t.fine }}</td>
+                    <td>{{ t.fine_status }}</td>
+                    <td>{{ t.copy_no }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

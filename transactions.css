@@ -1,0 +1,68 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f6fb;
+}
+.navbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background: #ddd;
+}
+.navbar a {
+    padding: 8px 15px;
+    background: #eee;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+.navbar a {
+    background: #d09047;
+    color: white;
+}
+
+.container {
+    padding: 20px;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.top-bar input {
+    padding: 8px;
+    width: 200px;
+}
+.top-bar button {
+    padding: 8px 15px;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+    color: #4a6cf7;
+}
+.table-box {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background: #d09047;
+    color: white;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background: #f2f2f2;
+}

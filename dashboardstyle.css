@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background: #cfcfcf;
+}
+.top-header {
+    background: #d09047;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+.logout-btn {
+    padding: 8px 15px;
+    background: linear-gradient(45deg, #ff0077, #c800ff);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.logout-btn:hover {
+    opacity: 0.8;
+}
+.top-bar {
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    background: #e6e6e6;
+    color: #555;
+}
+.navbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background: #ddd;
+}
+.navbar a {
+    padding: 8px 15px;
+    background: #eee;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+.navbar a {
+    background: #d09047;
+    color: white;
+}
+.container {
+    padding: 20px;
+}
+.welcome-box h2 {
+    color: #d09047;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 180px);
+    gap: 20px;
+}
+.card {
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+}
+.blue { background: #4a6cf7; }
+.cyan { background: #4db6d6; }
+.pink { background: #c218a5; }
+.red { background: #ff2e75; }
+.lightblue { background: #4a8bd6; }
+.purple { background: #6a1bb1; }
+.teal { background: #4bb3c7; }
+.violet { background: #4b1bb1; }

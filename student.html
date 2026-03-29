@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="students.css">
+</head>
+<body>
+    <div class="container">
+      <div class="top-bar">
+        <h2>👥 Student Management</h2>
+
+        <a href="studentregister.html" class="add-btn">
+             + Register New Student
+         </a>
+    </div>  
+    <div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="book.html">Books</a>
+        <a href="issue_return.html">Issued Books</a>
+        <a href="transaction.html">Transactions</a>
+        <a href="fines.html">Fine & Payments</a>
+        <a href="reports.html">Reports</a>
+        <a href="notifications.html">Notifications</a>
+    </div>
+    <div class="search-box">
+        🔍 Search Students:
+        <input type="text" placeholder="Enter name or email">
+        <button class="search-btn">Search</button>
+        <button class="refresh-btn" onclick="location.reload()">Refresh</button>
+    </div>
+     <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student Code</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Semester</th>
+                    <th>Issued</th>
+                    <th>Max</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+             {% for student in students %}
+                <tr>
+                    <td>{{ student.id }}</td>
+                    <td>{{ student.code }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.department }}</td>
+                    <td>{{ student.semester }}</td>
+                    <td>{{ student.issued }}</td>
+                    <td>{{ student.max_books }}</td>
+                    <td>Active</td>
+                </tr>
+                {% endfor %}   
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

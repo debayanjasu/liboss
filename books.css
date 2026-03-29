@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    background: #ddd;
+}
+.navbar a {
+    padding: 8px 15px;
+    background: #eee;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    font-size: 14px;
+}
+.navbar a {
+    background: #d09047;
+    color: white;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+.left {
+    width: 35%;
+    padding: 20px;
+    background: #f0f0f0;
+    border-right: 2px solid #999;
+}
+.left h2 {
+    margin-bottom: 10px;
+}
+.tabs {
+    display: flex;
+    margin-bottom: 10px;
+}
+.tabs button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+}
+.tabs button.active {
+    background: #4a6cf7;
+    color: white;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form input, 
+form select, 
+form textarea {
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+form button {
+    background: #4db6d6;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}.right {
+    width: 65%;
+    padding: 20px;
+}
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.search-btn {
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.refresh-btn {
+    background: #4db6d6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.table-container {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background: linear-gradient(45deg, #4a6cf7, #6a8dff);
+    color: white;
+}
+th {
+    padding: 12px;
+}
+td {
+    padding: 12px;
+    text-align: center;
+}
+tr:hover {
+    background: #f0f4ff;
+}
+tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}

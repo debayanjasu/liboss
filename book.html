@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books Management</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="books.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="book.html">Books</a>
+        <a href="issue_return.html">Issued Books</a>
+        <a href="transaction.html">Transactions</a>
+        <a href="fines.html">Fine & Payments</a>
+        <a href="reports.html">Reports</a>
+        <a href="notifications.html">Notifications</a>
+    </div>
+<div class="container">
+    <div class="left">
+        <h2>📘 Add New Book</h2>
+        <div class="tabs">
+            <button class="active" onclick="showTab('manual')">Manual Entry</button>
+            <button onclick="showTab('quick')">Quick Entry</button>
+        </div>
+        <div id="manual" class="tab-content active">
+            <form method="post" action="/add_book">
+                <input type="text" name="rfid" placeholder="RFID Tag">
+                <input type="text" name="title" placeholder="Title *" required>
+                <input type="text" name="author" placeholder="Author *" required>
+                <input type="text" name="publisher" placeholder="Publisher">
+                <input type="text" name="isbn" placeholder="ISBN">
+                <input type="text" name="edition" placeholder="Edition">
+                <select name="category">
+                    <option value="">Select Category</option>
+                    <option>Book</option>
+                    <option>Journal</option>
+                    <option>Magazine</option>
+                    <option>Research Paper</option>
+                </select>
+                <input type="text" name="shelf" placeholder="Shelf Location">
+                <input type="number" name="total" placeholder="Total Copies *" required>
+                <textarea name="description" placeholder="Description"></textarea>
+                <button type="submit">+ Add Book</button>
+            </form>
+        </div>
+        <div id="quick" class="tab-content">
+            <p>Quick add using ISBN (coming soon...)</p>
+        </div>
+    </div>
+    <div class="right">
+
+        <h2>📚 Book Catalog</h2>
+       <div class="search-box">
+           <input type="text" placeholder="🔍 Search books...">
+           <button class="search-btn">Search</button>
+           <button class="refresh-btn" onclick="location.reload()">Refresh</button>
+       </div>
+
+    
+     <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Book No</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Category</th>
+                    <th>Total</th>
+                    <th>Available</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.book_no }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publisher }}</td>
+                    <td>{{ book.category }}</td>
+                    <td>{{ book.total }}</td>
+                    <td>{{ book.available }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </div>
+    
+</div>
+<script>
+function showTab(tab) {
+    document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+    document.querySelectorAll(".tabs button").forEach(el => el.classList.remove("active"));
+
+    document.getElementById(tab).classList.add("active");
+    event.target.classList.add("active");
+}
+</script>
+</body>
+</html>
